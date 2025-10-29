@@ -1,0 +1,495 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ALICE Data Project Portfolio - Jeff Franzen</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+            line-height: 1.6;
+            color: #333;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            min-height: 100vh;
+            padding: 20px;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            background: white;
+            border-radius: 20px;
+            box-shadow: 0 20px 60px rgba(0,0,0,0.3);
+            overflow: hidden;
+        }
+
+        header {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            padding: 60px 40px;
+            text-align: center;
+        }
+
+        header h1 {
+            font-size: 3em;
+            margin-bottom: 10px;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.2);
+        }
+
+        header p {
+            font-size: 1.3em;
+            opacity: 0.95;
+        }
+
+        .stats {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 20px;
+            padding: 40px;
+            background: #f8f9fa;
+        }
+
+        .stat-card {
+            background: white;
+            padding: 20px;
+            border-radius: 10px;
+            text-align: center;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+        }
+
+        .stat-card h3 {
+            color: #667eea;
+            font-size: 2.5em;
+            margin-bottom: 5px;
+        }
+
+        .stat-card p {
+            color: #666;
+            font-size: 0.9em;
+        }
+
+        .content {
+            padding: 40px;
+        }
+
+        .section {
+            margin-bottom: 50px;
+        }
+
+        .section h2 {
+            font-size: 2em;
+            margin-bottom: 20px;
+            color: #667eea;
+            border-bottom: 3px solid #667eea;
+            padding-bottom: 10px;
+        }
+
+        .repos-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 25px;
+            margin-top: 20px;
+        }
+
+        .repo-card {
+            background: #f8f9fa;
+            border-radius: 10px;
+            padding: 25px;
+            border-left: 5px solid #667eea;
+            transition: transform 0.3s, box-shadow 0.3s;
+        }
+
+        .repo-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 25px rgba(0,0,0,0.1);
+        }
+
+        .repo-card h3 {
+            font-size: 1.4em;
+            margin-bottom: 10px;
+            color: #333;
+        }
+
+        .repo-card .repo-meta {
+            color: #666;
+            font-size: 0.85em;
+            margin-bottom: 15px;
+        }
+
+        .repo-card .repo-desc {
+            margin-bottom: 15px;
+            line-height: 1.6;
+        }
+
+        .repo-card .tags {
+            margin-bottom: 15px;
+        }
+
+        .tag {
+            display: inline-block;
+            background: #667eea;
+            color: white;
+            padding: 4px 12px;
+            border-radius: 15px;
+            font-size: 0.8em;
+            margin-right: 5px;
+            margin-bottom: 5px;
+        }
+
+        .btn {
+            display: inline-block;
+            padding: 10px 20px;
+            background: #667eea;
+            color: white;
+            text-decoration: none;
+            border-radius: 5px;
+            transition: background 0.3s;
+            margin-right: 10px;
+            margin-top: 5px;
+        }
+
+        .btn:hover {
+            background: #764ba2;
+        }
+
+        .btn-secondary {
+            background: #6c757d;
+        }
+
+        .btn-secondary:hover {
+            background: #5a6268;
+        }
+
+        .files-list {
+            background: #f8f9fa;
+            padding: 20px;
+            border-radius: 10px;
+            margin-top: 20px;
+        }
+
+        .file-item {
+            padding: 15px;
+            background: white;
+            margin-bottom: 10px;
+            border-radius: 5px;
+            border-left: 4px solid #667eea;
+        }
+
+        .file-item h4 {
+            margin-bottom: 5px;
+            color: #333;
+        }
+
+        .file-item .file-meta {
+            color: #666;
+            font-size: 0.9em;
+        }
+
+        .highlight-box {
+            background: #fffbea;
+            border-left: 5px solid #ffc107;
+            padding: 20px;
+            border-radius: 5px;
+            margin: 20px 0;
+        }
+
+        .highlight-box h3 {
+            color: #ff6b6b;
+            margin-bottom: 10px;
+        }
+
+        footer {
+            background: #2c3e50;
+            color: white;
+            text-align: center;
+            padding: 30px;
+        }
+
+        footer a {
+            color: #667eea;
+            text-decoration: none;
+        }
+
+        footer a:hover {
+            text-decoration: underline;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>🗺️ ALICE Data Project</h1>
+            <p>Economic Vulnerability Mapping for American Red Cross</p>
+            <p style="font-size: 0.9em; margin-top: 10px; opacity: 0.8;">By Jeff Franzen | October 2025</p>
+        </header>
+
+        <div class="stats">
+            <div class="stat-card">
+                <h3>6</h3>
+                <p>GitHub Repositories</p>
+            </div>
+            <div class="stat-card">
+                <h3>33</h3>
+                <p>US States</p>
+            </div>
+            <div class="stat-card">
+                <h3>2,348</h3>
+                <p>Counties</p>
+            </div>
+            <div class="stat-card">
+                <h3>85,846</h3>
+                <p>Total Records</p>
+            </div>
+            <div class="stat-card">
+                <h3>170</h3>
+                <p>Red Cross Chapters</p>
+            </div>
+            <div class="stat-card">
+                <h3>9</h3>
+                <p>Years (2010-2023)</p>
+            </div>
+        </div>
+
+        <div class="content">
+            <div class="section">
+                <h2>Project Overview</h2>
+                <p>This portfolio represents a comprehensive data collection, processing, and visualization project that consolidates ALICE (Asset Limited, Income Constrained, Employed) economic vulnerability data across 33 US states, enriched with American Red Cross organizational boundaries and US Census demographics.</p>
+
+                <div class="highlight-box">
+                    <h3>⭐ Latest: Complete Master Dataset (Oct 28, 2025)</h3>
+                    <p><strong>alice_master_database</strong> - The definitive consolidated dataset with map-ready GeoJSON files, complete time-series data (2010-2023), and comprehensive documentation. This is your one-stop repository for all ALICE data needs.</p>
+                </div>
+            </div>
+
+            <div class="section">
+                <h2>GitHub Repositories</h2>
+
+                <div class="repos-grid">
+                    <div class="repo-card">
+                        <h3>1. alice_master_database ⭐</h3>
+                        <div class="repo-meta">Created: October 28, 2025 | Status: Active</div>
+                        <div class="repo-desc">
+                            <strong>Complete consolidated dataset for 33 US states</strong>
+                            <p>The definitive data repository containing county and subcounty ALICE data, Red Cross organizational mappings, demographics, and map-ready GeoJSON files.</p>
+                        </div>
+                        <div class="tags">
+                            <span class="tag">Master Dataset</span>
+                            <span class="tag">GeoJSON</span>
+                            <span class="tag">2010-2023</span>
+                            <span class="tag">Ready to Use</span>
+                        </div>
+                        <a href="https://github.com/franzenjb/alice_master_database" class="btn" target="_blank">View on GitHub</a>
+                        <a href="https://github.com/franzenjb/alice_master_database/raw/main/MASTER_counties_redcross_alice_demographics.csv" class="btn btn-secondary" target="_blank">Download Data</a>
+                    </div>
+
+                    <div class="repo-card">
+                        <h3>2. alice-red-cross-data</h3>
+                        <div class="repo-meta">Created: October 27, 2025 | Status: Active</div>
+                        <div class="repo-desc">
+                            <strong>ALICE data with Red Cross organizational boundaries</strong>
+                            <p>County-level ALICE data enriched with Red Cross Chapter/Region/Division mapping, including GeoJSON files and shapefiles for ArcGIS/QGIS.</p>
+                        </div>
+                        <div class="tags">
+                            <span class="tag">Shapefiles</span>
+                            <span class="tag">ArcGIS</span>
+                            <span class="tag">Red Cross Org</span>
+                        </div>
+                        <a href="https://github.com/franzenjb/alice-red-cross-data" class="btn" target="_blank">View on GitHub</a>
+                    </div>
+
+                    <div class="repo-card">
+                        <h3>3. alice-redcross-atlas</h3>
+                        <div class="repo-meta">Created: October 25, 2025 | Status: Active</div>
+                        <div class="repo-desc">
+                            <strong>Interactive intelligence platform</strong>
+                            <p>Red Cross Community Vulnerability Atlas - Interactive web application with 85,846 enriched records across 212 chapters. Advanced analytics and visualization platform.</p>
+                        </div>
+                        <div class="tags">
+                            <span class="tag">Web App</span>
+                            <span class="tag">Interactive</span>
+                            <span class="tag">85K Records</span>
+                            <span class="tag">Analytics</span>
+                        </div>
+                        <a href="https://github.com/franzenjb/alice-redcross-atlas" class="btn" target="_blank">View on GitHub</a>
+                        <a href="https://franzenjb.github.io/alice-redcross-atlas" class="btn btn-secondary" target="_blank">Live Demo</a>
+                    </div>
+
+                    <div class="repo-card">
+                        <h3>4. alice-data-explorer</h3>
+                        <div class="repo-meta">Created: October 21, 2025 | Status: Active</div>
+                        <div class="repo-desc">
+                            <strong>Advanced choropleth mapping tool</strong>
+                            <p>Interactive ALICE Data Explorer with advanced choropleth mapping, data analytics tools, and visualization dashboards for exploring economic vulnerability patterns.</p>
+                        </div>
+                        <div class="tags">
+                            <span class="tag">Choropleth Maps</span>
+                            <span class="tag">Interactive</span>
+                            <span class="tag">Dashboard</span>
+                        </div>
+                        <a href="https://github.com/franzenjb/alice-data-explorer" class="btn" target="_blank">View on GitHub</a>
+                        <a href="https://franzenjb.github.io/alice-data-explorer" class="btn btn-secondary" target="_blank">Live Demo</a>
+                    </div>
+
+                    <div class="repo-card">
+                        <h3>5. alice-demographics</h3>
+                        <div class="repo-meta">Created: October 20, 2025 | Status: Active</div>
+                        <div class="repo-desc">
+                            <strong>Demographics visualization tool</strong>
+                            <p>Interactive Census Demographics Visualization with dual-range sliders for filtering and exploring population characteristics and trends.</p>
+                        </div>
+                        <div class="tags">
+                            <span class="tag">Demographics</span>
+                            <span class="tag">Census Data</span>
+                            <span class="tag">Interactive Filters</span>
+                        </div>
+                        <a href="https://github.com/franzenjb/alice-demographics" class="btn" target="_blank">View on GitHub</a>
+                        <a href="https://franzenjb.github.io/alice-demographics" class="btn btn-secondary" target="_blank">Live Demo</a>
+                    </div>
+
+                    <div class="repo-card">
+                        <h3>6. alice-data-mapper</h3>
+                        <div class="repo-meta">Created: October 20, 2025 | Status: Source Archive</div>
+                        <div class="repo-desc">
+                            <strong>Original source data and processing tools</strong>
+                            <p>Contains original Excel files for 33 states, data processing scripts, and consolidation tools. Reference repository for understanding the data pipeline.</p>
+                        </div>
+                        <div class="tags">
+                            <span class="tag">Source Data</span>
+                            <span class="tag">33 States</span>
+                            <span class="tag">Processing Scripts</span>
+                        </div>
+                        <a href="https://github.com/franzenjb/alice-data-mapper" class="btn" target="_blank">View on GitHub</a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="section">
+                <h2>Local Files in This Folder</h2>
+
+                <div class="files-list">
+                    <div class="file-item">
+                        <h4>📖 PROJECT_ROADMAP.md</h4>
+                        <div class="file-meta">Complete roadmap explaining all repositories, files, and use cases</div>
+                    </div>
+
+                    <div class="file-item">
+                        <h4>🌐 portfolio.html</h4>
+                        <div class="file-meta">This file - Portfolio showcase page</div>
+                    </div>
+
+                    <div class="file-item">
+                        <h4>📁 ALICE Master Database/</h4>
+                        <div class="file-meta">Complete local copy of the master dataset with all files:
+                            <ul style="margin-top: 10px; margin-left: 20px;">
+                                <li>MASTER CSV (6.3 MB) - County data 2010-2023</li>
+                                <li>counties_with_alice_2023.geojson (3.9 MB) - Map-ready!</li>
+                                <li>3 Subcounty CSV files (CCDs, Places, ZIPs)</li>
+                                <li>Red Cross reference file</li>
+                                <li>Comprehensive README documentation</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="section">
+                <h2>Quick Start Guide</h2>
+
+                <h3>To Create a Map (5 minutes):</h3>
+                <ol style="margin-left: 20px; line-height: 1.8;">
+                    <li>Open <code>ALICE Master Database/counties_with_alice_2023.geojson</code></li>
+                    <li>Drag into ArcGIS Online, QGIS, or <a href="http://geojson.io" target="_blank">geojson.io</a></li>
+                    <li>Style by "Combined_Vulnerability_Pct" field</li>
+                    <li>Use color scale: Green (0-20%) → Yellow (20-40%) → Orange (40-60%) → Red (60%+)</li>
+                    <li>Filter by Chapter, Region, or Division as needed</li>
+                </ol>
+
+                <h3 style="margin-top: 30px;">To Explore Interactively:</h3>
+                <ol style="margin-left: 20px; line-height: 1.8;">
+                    <li>Visit <a href="https://franzenjb.github.io/alice-data-explorer" target="_blank">alice-data-explorer</a> for choropleth maps</li>
+                    <li>Visit <a href="https://franzenjb.github.io/alice-redcross-atlas" target="_blank">alice-redcross-atlas</a> for Red Cross intelligence platform</li>
+                    <li>Visit <a href="https://franzenjb.github.io/alice-demographics" target="_blank">alice-demographics</a> for demographic analysis</li>
+                </ol>
+
+                <h3 style="margin-top: 30px;">To Download Data:</h3>
+                <ol style="margin-left: 20px; line-height: 1.8;">
+                    <li>Visit <a href="https://github.com/franzenjb/alice_master_database" target="_blank">alice_master_database</a></li>
+                    <li>Download the files you need (CSV, GeoJSON, or entire repository)</li>
+                    <li>Read the README.md for detailed documentation</li>
+                </ol>
+            </div>
+
+            <div class="section">
+                <h2>Key Metrics & Coverage</h2>
+
+                <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 20px; margin-top: 20px;">
+                    <div style="background: #f8f9fa; padding: 20px; border-radius: 10px;">
+                        <h3 style="color: #667eea; margin-bottom: 10px;">Geographic</h3>
+                        <ul style="line-height: 1.8; margin-left: 20px;">
+                            <li>33 US States</li>
+                            <li>2,348 Counties (98% coverage)</li>
+                            <li>23,665 Census County Divisions</li>
+                            <li>19,324 Cities/Towns</li>
+                            <li>22,074 ZIP Codes</li>
+                        </ul>
+                    </div>
+
+                    <div style="background: #f8f9fa; padding: 20px; border-radius: 10px;">
+                        <h3 style="color: #667eea; margin-bottom: 10px;">Organizational</h3>
+                        <ul style="line-height: 1.8; margin-left: 20px;">
+                            <li>170 Red Cross Chapters</li>
+                            <li>39 Red Cross Regions</li>
+                            <li>6 Red Cross Divisions</li>
+                            <li>Contact information included</li>
+                            <li>FEMA Region mappings</li>
+                        </ul>
+                    </div>
+
+                    <div style="background: #f8f9fa; padding: 20px; border-radius: 10px;">
+                        <h3 style="color: #667eea; margin-bottom: 10px;">Temporal</h3>
+                        <ul style="line-height: 1.8; margin-left: 20px;">
+                            <li>9 years of data (2010-2023)</li>
+                            <li>Time-series analysis ready</li>
+                            <li>Trend tracking enabled</li>
+                            <li>Annual snapshots</li>
+                            <li>Historical comparison</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+            <div class="section">
+                <h2>What is ALICE?</h2>
+                <p><strong>ALICE = Asset Limited, Income Constrained, Employed</strong></p>
+                <p style="margin-top: 15px;">ALICE households are the "working poor" - they earn above the Federal Poverty Level but below what it actually costs to live in their community. Traditional poverty measures miss 2-3x as many struggling households. ALICE data reveals the true scope of economic hardship.</p>
+
+                <div style="background: #f8f9fa; padding: 20px; border-radius: 10px; margin-top: 20px;">
+                    <h3 style="color: #667eea; margin-bottom: 15px;">Key Metrics:</h3>
+                    <ul style="line-height: 1.8; margin-left: 20px;">
+                        <li><strong>Poverty Rate:</strong> % below Federal Poverty Level</li>
+                        <li><strong>ALICE Rate:</strong> % above poverty but below survival budget (working poor)</li>
+                        <li><strong>Combined Vulnerability:</strong> Poverty + ALICE = total households struggling</li>
+                        <li><strong>Above ALICE:</strong> % who can afford basic needs</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <footer>
+            <p><strong>ALICE Data Project Portfolio</strong></p>
+            <p style="margin: 10px 0;">Created by Jeff Franzen | October 2025</p>
+            <p>American Red Cross Economic Vulnerability Data Initiative</p>
+            <p style="margin-top: 20px;">
+                <a href="https://github.com/franzenjb" target="_blank">GitHub Profile</a> |
+                <a href="https://www.unitedforalice.org" target="_blank">United For ALICE</a>
+            </p>
+        </footer>
+    </div>
+</body>
+</html>
